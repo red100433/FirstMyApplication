@@ -39,20 +39,44 @@ public class MainActivity extends ActionBarActivity {
         bexit = (Button) findViewById(R.id.but1);
         binitial = (Button) findViewById(R.id.but2);
 
+        rg1.setVisibility(View.INVISIBLE);
+        rblp.setVisibility(View.INVISIBLE);
+        rbkk.setVisibility(View.INVISIBLE);
+        rbjb.setVisibility(View.INVISIBLE);
+        imv.setVisibility(View.INVISIBLE);
+        tv2.setVisibility(View.INVISIBLE);
+        bexit.setVisibility(View.INVISIBLE);
+        binitial.setVisibility(View.INVISIBLE);
+
         sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked)
                 {
+                    rg1.setVisibility(View.VISIBLE);
+                    rblp.setVisibility(View.VISIBLE);
+                    rbkk.setVisibility(View.VISIBLE);
+                    rbjb.setVisibility(View.VISIBLE);
                     imv.setVisibility(View.VISIBLE);
+                    tv2.setVisibility(View.VISIBLE);
+                    bexit.setVisibility(View.VISIBLE);
+                    binitial.setVisibility(View.VISIBLE);
                 }
                 else
                 {
+                    rg1.setVisibility(View.INVISIBLE);
+                    rblp.setVisibility(View.INVISIBLE);
+                    rbkk.setVisibility(View.INVISIBLE);
+                    rbjb.setVisibility(View.INVISIBLE);
+                    imv.setVisibility(View.INVISIBLE);
                     rbjb.setChecked(false);
                     rbkk.setChecked(false);
                     rblp.setChecked(false);
                     imv.setVisibility(View.INVISIBLE);
                     imv.setImageResource(0);
+                    tv2.setVisibility(View.INVISIBLE);
+                    bexit.setVisibility(View.INVISIBLE);
+                    binitial.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -86,7 +110,10 @@ public class MainActivity extends ActionBarActivity {
         binitial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sw1.setChecked(false);
+                rbjb.setChecked(false);
+                rbkk.setChecked(false);
+                rblp.setChecked(false);
+                imv.setImageResource(0);
             }
         });
     }
