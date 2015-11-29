@@ -88,15 +88,13 @@ public class MainActivity extends ActionBarActivity {
                     @Override
                     public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         filename = Integer.toString(year) + "_" + Integer.toString(monthOfYear + 1) + "_" + Integer.toString(dayOfMonth) + ".txt";
-                        //filename 초기값 설정해줘야함
                         viewstr = Integer.toString(year) + " " + Integer.toString(monthOfYear + 1) + " " + Integer.toString(dayOfMonth);
                     }
                 });
                 dlg.setPositiveButton("confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
-                        //이벤트처리해야돼
+                        
                         tv.setText(viewstr);
                         if(viewstr.equals(""))
                             tv.setText("Change Day");
