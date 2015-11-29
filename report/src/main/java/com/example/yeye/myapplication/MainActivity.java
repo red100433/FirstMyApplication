@@ -220,7 +220,6 @@ public class MainActivity extends ActionBarActivity {
                                 tv.setText("Day");
                             }
                         }).show();
-
                 break;
             case THREE:
                 ed.setTextSize(25);
