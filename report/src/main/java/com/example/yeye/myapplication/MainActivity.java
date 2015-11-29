@@ -38,7 +38,7 @@ public class MainActivity extends ActionBarActivity {
     final int FOUR = 4;
     final int FIVE = 5;
     File sdcard, mydir;
-
+    Calendar cal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,14 +59,25 @@ public class MainActivity extends ActionBarActivity {
         path += String.format("/");
 
 
+        cal = Calendar.getInstance();
+        int cyear = cal.get(Calendar.YEAR);
+        int cmonth = cal.get(Calendar.MONTH);
+        int cday = cal.get(Calendar.DAY_OF_MONTH);
+        filename = Integer.toString(cyear) + "_" + Integer.toString(cmonth + 1) + "_" + Integer.toString(cday) + ".txt";
+        viewstr = Integer.toString(cyear) + " " + Integer.toString(cmonth + 1) + " " + Integer.toString(cday);
+        tv.setText(viewstr);
+        String fp = path + filename;
+        String str = readDiary(fp);
+        ed.setText(str);
+
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 dpview = (View) View.inflate(MainActivity.this, R.layout.datepicker, null);
                 AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                 dlg.setView(dpview);
                 dp = (DatePicker) dpview.findViewById(R.id.datap1);
-                Calendar cal = Calendar.getInstance();
                 int cyear = cal.get(Calendar.YEAR);
                 int cmonth = cal.get(Calendar.MONTH);
                 int cday = cal.get(Calendar.DAY_OF_MONTH);
