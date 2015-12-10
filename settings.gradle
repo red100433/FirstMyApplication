@@ -1,1 +1,1 @@
-include ':app', ':button', ':Calc', ':Image', ':calc2', ':webview', ':dialog', ':intent', ':adapter', ':report'
+include ':app', ':button', ':Calc', ':Image', ':calc2', ':webview', ':dialog', ':intent', ':adapter', ':report', ':diary', ':sqlite'

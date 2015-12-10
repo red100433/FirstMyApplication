@@ -94,7 +94,7 @@ public class MainActivity extends ActionBarActivity {
                 dlg.setPositiveButton("confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        
+
                         tv.setText(viewstr);
                         if(viewstr.equals(""))
                             tv.setText("Change Day");
